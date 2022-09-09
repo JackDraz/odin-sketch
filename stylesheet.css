@@ -1,0 +1,35 @@
+.body-items {
+    margin-left: 50px;
+}
+
+#grid {
+    width: 700px;
+    height: 700px;
+    background-color: lavender;
+}
+
+#menus {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+#inputs {
+    display:flex;
+    gap: 5px;
+    align-content: center;
+
+}
+
+.grid-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+h1 {
+    font-family:sans-serif, Helvetica;
+    text-align: center;
+}
