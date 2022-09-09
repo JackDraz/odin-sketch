@@ -35,3 +35,7 @@ h1 {
     font-family:sans-serif, Helvetica;
     text-align: center;
 }
+
+.renderSquare:hover {
+    background-color: blueviolet;
+}
