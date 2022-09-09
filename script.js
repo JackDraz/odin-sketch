@@ -9,13 +9,20 @@ slider.oninput = function() {
     output.innerText = `${this.value} x ${this.value}`; 
 }
 
-let size = slider.value;
-let gridCanvas = document.querySelector("#grid");
+let number = slider.value;
+let gridCanvas = document.getElementById("grid");
+let gridCanvasStyle = getComputedStyle(gridCanvas);
+const gridWidth = (parseInt(gridCanvasStyle.width));
 
-function createGrid(size) {
-    for (let i = 1; i >= size; i++) {
-        document.createElement("div");
-
+function createGrid(gridWidth, number) {
+    let i = 1;
+    while(i <= (number ** 2)) {
+        const drawSquare = document.createElement("div");
+        drawSquare.style.width = `${gridWidth/number}px`;
+        drawSquare.style.height = `${gridWidth/number}px`;
+        gridCanvas.appendChild(drawSquare);
+        i++;
     }
-
 }
+
+createGrid(gridWidth, 32);
