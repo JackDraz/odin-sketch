@@ -5,12 +5,12 @@ var slider = document.getElementById("mySlider");
 var output = document.getElementById("scale");
 output.innerText = `${slider.value} x ${slider.value}`;
 let num = slider.value;
+let colourSquares;
 
 slider.oninput = function() {
     output.innerText = `${this.value} x ${this.value}`;
     return num = this.value;
 }
-
 
 let gridCanvas = document.getElementById("grid");
 let gridCanvasStyle = getComputedStyle(gridCanvas);
@@ -28,9 +28,16 @@ function createGrid(gridWidth, number) {
     }
 }
 
+//button and creation of grid
 const input = document.querySelector(".submit-button");
 input.addEventListener("click", () => {
-    console.log(num);
     gridCanvas.replaceChildren();
     createGrid(canvasWidth, num);
+
+    colourSquares = document.querySelectorAll("div.renderSquare");
+    colourSquares.forEach(square => square.addEventListener("mouseover", () => {
+        square.style.backgroundColor = "black";
+    }));
+    return colourSquares;
 });
+
